@@ -1,3 +1,4 @@
+package com.bianzj.jdk8;
 
 @FunctionalInterface
 interface MyInterface {
@@ -6,6 +7,7 @@ interface MyInterface {
 
     String toString();
 }
+
 public class Test2{
 
     public  void  myTest(MyInterface myInterface){

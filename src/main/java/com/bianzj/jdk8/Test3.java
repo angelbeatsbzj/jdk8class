@@ -1,7 +1,9 @@
+package com.bianzj.jdk8;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.function.Function;
 
 public class Test3 {
 
@@ -32,7 +34,10 @@ public class Test3 {
         list.forEach(str ->list1.add(str.toUpperCase()));
         list1.forEach(str-> System.out.println(str));
 //        list.stream().map(str ->str.toUpperCase()).forEach(str -> System.out.println(str));
-        list.stream().map(String::toUpperCase).forEach(item-> System.out.println(item));
+//        list.stream().map(String::toUpperCase).forEach(item-> System.out.println(item));
+
+        Function<String,String> function = String::toUpperCase;
+        System.out.println(function.getClass().getInterfaces()[0]);
     }
 }
 
@@ -42,6 +47,7 @@ interface TheInterface{
 
     void myMethod();
 }
+
 @FunctionalInterface
 interface TheInterface2{
     void  myMethod2();
